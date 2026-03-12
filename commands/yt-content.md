@@ -8,10 +8,10 @@
 
 ### 1. 提取视频元数据
 
-运行脚本获取视频信息（请在 skill 安装目录中找到脚本）：
+在用户的 skill 安装目录中查找并运行脚本：
 
 ```bash
-python "~/.claude/skills/youtube-content-writer/scripts/fetch_video_meta.py" "<youtube_url>"
+python "$(find ~/.claude/skills -name fetch_video_meta.py -print -quit 2>/dev/null)" "<youtube_url>"
 ```
 
 ### 2. 补充搜索（必做）
@@ -24,7 +24,7 @@ python "~/.claude/skills/youtube-content-writer/scripts/fetch_video_meta.py" "<y
 
 ### 3. 生成全套文案
 
-读取 `~/.claude/skills/youtube-content-writer/references/content-prompt.md` 获取完整输出规则，严格按照其中格式输出：
+在 skill 安装目录中找到 `references/content-prompt.md` 并读取，获取完整输出规则，严格按照其中格式输出：
 
 **输出结构：**
 
